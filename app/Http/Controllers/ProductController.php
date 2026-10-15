@@ -37,8 +37,8 @@ class ProductController extends Controller
             $query->where('category', $selectedCategory);
         }
 
-        // 4. Paginate with 6 products per page and preserve query string parameters
-        $products = $query->latest()->paginate(6)->withQueryString();
+        // 4. Paginate with 40 products per page by default and preserve query string parameters
+        $products = $query->latest()->paginate(40)->withQueryString();
 
         // 5. Retrieve distinct categories present in active products for filter pills
         $categories = Product::where('status', 'active')
