@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Offline - ShopEasy</title>
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        :root {
+            --brand-600: #4f46e5;
+            --brand-700: #4338ca;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--slate-50);
+            color: var(--slate-800);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+        }
+        .container {
+            max-width: 480px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 40px 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #eef2ff;
+            color: var(--brand-600);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .icon-circle svg {
+            width: 40px;
+            height: 40px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .brand span {
+            color: var(--brand-600);
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 14px;
+            color: var(--slate-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .alert-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+            padding: 14px 16px;
+            border-radius: 16px;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .alert-box strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        .btn-primary {
+            background-color: var(--brand-600);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+        .btn-primary:hover {
+            background-color: var(--brand-700);
+        }
+        .btn-secondary {
+            background-color: var(--slate-100);
+            color: var(--slate-800);
+        }
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">Shop<span>Easy</span></div>
+        <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+                <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+        </div>
+        <h1>You're Currently Offline</h1>
+        <p>It seems your device has lost connection to the internet. Previously cached pages can be browsed, but online services are temporarily paused.</p>
+
+        <div class="alert-box">
+            <strong>Security Notice:</strong>
+            For your protection, cart updates, order placements, payments, and cancellations require a live connection to our secure server. No order or payment has been submitted while offline.
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="window.location.reload()">Retry Connection</button>
+            <a class="btn btn-secondary" href="/">Return to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>
